@@ -38,7 +38,65 @@ $(document).ready(function() {
 		$(".dot2_A, .dot1_A").removeClass('dotA');
 		$(".dot3_A").addClass('dotA');
 	});
+
+	// 聲音部分
+	// 背景音效
+	$(".first_click").click(function() {
+		play_bgm1();
+		setTimeout(bgm2_delay,14000);
+		setInterval(play_bgm1,28000);
+	});
+
+	function bgm2_delay() {
+		play_bgm2();
+		setInterval(play_bgm2, 28000)
+	}
+
+	var bgm1_play = document.getElementById("bgm1");
+	function play_bgm1() {
+		bgm1_play.play();
+	}
+
+	var bgm2_play = document.getElementById("bgm2");
+	function play_bgm2() {
+		bgm2_play.play();
+	}
+
+	$("body").click(function() {
+		$("body").removeClass('first_click');
+	});
+
+	// 切換按鈕音效
+	$("#dot1, #dot1_P").click(function() {
+		play_top();
+	});
+	var top_play = document.getElementById("top_audio");
+	function play_top() {
+		top_play.currentTime = 0;
+		top_play.play();
+	}
+
+
+	$("#dot2, #dot2_P").click(function() {
+		play_mid();
+	});
+	var mid_play = document.getElementById("mid_audio");
+	function play_mid() {
+		mid_play.currentTime = 0;
+		mid_play.play();
+	}
+
+
+	$("#dot3, #dot3_P").click(function() {
+		play_bot();
+	});	
+	var bot_play = document.getElementById("bot_audio");
+	function play_bot() {
+		bot_play.currentTime = 0;
+		bot_play.play();
+	}
 });
+
 
 
 
