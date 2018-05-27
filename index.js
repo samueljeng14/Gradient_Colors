@@ -47,6 +47,15 @@ $(document).ready(function() {
 		setInterval(play_bgm1,28000);
 	});
 
+	setTimeout(play, 2000);
+	function play(){
+		play_bgm1();
+		setTimeout(bgm2_delay,14000);
+		setInterval(play_bgm1,28000);		
+	}
+
+
+
 	function bgm2_delay() {
 		play_bgm2();
 		setInterval(play_bgm2, 28000)
